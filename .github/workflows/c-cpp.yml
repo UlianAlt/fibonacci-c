@@ -23,7 +23,7 @@ jobs:
       run: ./test_fibonacci
 
     - name: execute
-      run: ./fibonacci
+      run: ./fibonacci 8
       
     - name: mostrar o conteúdo do arquivo criado
       run: cat fibonacci.txt
