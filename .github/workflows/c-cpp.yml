@@ -1,0 +1,29 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: compile_test
+      run: gcc teste_fibonacci.c -o test_fibonacci
+
+    - name: compile
+      run: gcc fibonacci.c -o fibonacci
+      
+    - name: execute_test
+      run: ./test_fibonacci
+
+    - name: execute
+      run: ./fibonacci
+      
+    - name: mostrar o conteúdo do arquivo criado
+      run: cat fibonacci.txt
